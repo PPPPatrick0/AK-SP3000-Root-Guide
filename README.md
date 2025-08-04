@@ -50,7 +50,7 @@ Astell&Kern的系统存在一个关于文件权限的特殊Bug。为了确保终
 · 再次安装：使用任意方式，找到并重新安装一次 Term_Modded 应用（覆盖安装即可）。  
 （注：如果不知道怎么样再次安装的可以尝试使用同在APK.zip里的 Files_By_Google_Modded(deezer.android.app).apk ，  
 请通过chrome开启localsend或类似局域网传输程序将apk文件下载到设备本地，然后同样进行两次安装，  
-这样Files_By_Google才能获得正确的文件读写权限，否则进入Files_By_Google会什么都看不到）
+这样Files_By_Google才能获得正确的文件读写权限，否则进入Files_By_Google会什么都看不到）  
 · 再次启动终端应用。如果系统再次提示请求权限，请同样“允许”。  
 
 ##### 3) 开启ADB调试
