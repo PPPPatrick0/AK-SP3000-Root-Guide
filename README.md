@@ -120,5 +120,52 @@ fastboot --disable-verity flash vbmeta_system vbmeta_system.img
 ```
 完成以上所有刷写操作后，请不要立即重启设备，继续进行第三步的操作。
 
+### 3 通过APatch获取Root权限
+由于目标设备（SP3000）上修改包名的APatch管理器存在文件写入问题，我们需要借助一台普通的安卓设备来完成启动镜像的修补工作。
+
+#### 1) 在“辅助设备”上制作APatch镜像
+您需要一台普通的、无特殊限制的安卓设备（手机或平板均可）作为“辅助设备”。  
+* 在下载的 APK.zip中，解压后得到 APatch_10763_original.apk。  
+同时，找到 OTA_files/img/original/ 目录中的官方原版 boot.img。  
+* 安装并传输文件：  
+在您的“辅助设备”上，安装 APatch_10763_original.apk。  
+将官方原版的 boot.img 文件也一同拷贝到这台辅助设备的内部存储中（例如，“Download”文件夹）。  
+* 使用APatch进行修补：  
+在辅助设备上，打开APatch应用。  
+点击主界面右上角的从左往右第一个图标（手机+向下的箭头）。  
+选择 “Select a boot image to Patch” 选项。  
+在文件选择器中，找到并选择您刚刚拷贝的那个boot.img文件。  
+应用会提示您设置一个 SuperKey。这是一个用于在管理器中激活Root权限的“密码”，请务必设置一个并牢牢记住它。  
+输入完SuperKey后，点击“开始”（Start Patching）。APatch将会开始修补boot.img。  
+*获取最终镜像：  
+修补成功后，在辅助设备的“下载”文件夹中，会生成一个名为 apatch_patched_....img 的新文件。这就是我们最终需要的启动镜像。  
+将这个修补完成的镜像，从辅助设备传回您的Linux主机。
+
+#### 2) 为SP3000刷入最终的启动镜像并重启
+确保您的SP3000仍然处于上一步完成后的fastbootd模式。  
+在主机的终端里，导航到包含最终APatch镜像的目录，执行刷写命令：  
+```
+# 将 "Your/File/Path" 替换为您实际的文件路径和名称
+fastboot flash boot "Your/File/Path/apatch_patched_....img"
+
+# 镜像刷写完成后，执行以下命令重启您的SP3000：
+fastboot reboot
+```
+
+#### 3) 激活Root
+等待设备进入操作系统。  
+* 安装修改版APatch管理器：  
+在 APK.zip 中，找到 APatch_10763_Modded(com.appgeneration.itunerfree).apk。  
+将这个修改了包名的版本，安装到您的SP3000上。  
+* 获取Root权限：  
+在SP3000上打开刚刚安装的APatch管理器。  
+在应用主界面的输入框中，输入您之前设定好的那个SuperKey。  
+点击确认。如果一切顺利，应用将显示Root已激活。您可以通过 adb shell 并执行 su 命令来验证是否已获得#权限。
+
+
+## 至此，您的Astell&Kern SP3000已成功获取Root权限。  
+Enjoy It!
+
+
 
 ## English Version
