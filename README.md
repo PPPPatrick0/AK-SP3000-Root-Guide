@@ -1,6 +1,8 @@
 # AK-SP3000-Root-Guide
+# 艾利和SP3000的Root指北
 
 Rooting the Astell&amp;Kern SP3000 with Apatch
+通过Apatch来获取SP3000的Root权限
 
 ## [Chinese Version](https://github.com/PPPPatrick0/AK-SP3000-Root-Guide/blob/main/README.md#%E4%B8%AD%E6%96%87%E7%89%88chinese-version)
 ## [English Version](https://github.com/PPPPatrick0/AK-SP3000-Root-Guide/blob/main/README.md#english-version-1)
