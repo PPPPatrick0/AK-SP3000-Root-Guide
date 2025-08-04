@@ -166,6 +166,8 @@ fastboot reboot
 
 
 **至此，您的Astell&Kern SP3000已成功获取Root权限。**  
+请发挥你的想象力，没有什么是在拥有Root后做不到的！  
+关于解除Iriver操作系统的APP白名单限制，敬请期待！  
 **Enjoy It!**
 
 
