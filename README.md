@@ -114,3 +114,6 @@ fastboot --disable-verity flash vbmeta vbmeta.img
 fastboot --disable-verity flash vbmeta_system vbmeta_system.img
 ```
 完成以上所有刷写操作后，请不要立即重启设备，继续进行第三步的操作。
+
+
+## English Version
