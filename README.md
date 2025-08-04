@@ -163,8 +163,8 @@ fastboot reboot
 点击确认。如果一切顺利，应用将显示Root已激活。您可以通过 adb shell 并执行 su 命令来验证是否已获得#权限。
 
 
-## 至此，您的Astell&Kern SP3000已成功获取Root权限。  
-Enjoy It!
+**至此，您的Astell&Kern SP3000已成功获取Root权限。**  
+**Enjoy It!**
 
 
 
