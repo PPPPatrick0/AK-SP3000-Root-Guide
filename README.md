@@ -77,7 +77,7 @@ adb shell am start --user 0 -n com.iriver.tester.factorytool/.UserDebugActivity
 
 #### 2 镜像刷写
 在这一步，我们将通过fastbootd模式，向设备刷入三个镜像文件，分别为 vendor.img 和 vbmeta.img 以及 vbmeta_system.img。  
-***重要***：开始之前，请确保您已经从本指南的Release中下载了完整的配套文件（OTA_Files.zip）。
+***重要***：开始之前，请确保您已经从本指南的Release中下载了完整的配套文件（OTA_files.zip）。
 
 ##### 1) 刷写定制化的 vendor.img
 我们首先需要刷入一个经过特殊修改的vendor分区镜像。  
