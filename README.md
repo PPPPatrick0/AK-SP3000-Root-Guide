@@ -37,7 +37,7 @@ Rooting the Astell&amp;Kern SP3000 with Apatch
 由于SP3000没有在常规设置中提供开启ADB调试的入口，我们需要通过一个终端命令来调用其隐藏的工厂调试菜单。
 
 ##### 1) 安装终端模拟器
-在文件中，找到 APK/ 目录。  
+在Release中，找到 APK.zip。  
 定位到 Term_Modded(uk.co.sevendigital.android).apk 这个文件。这是一个经过修改的终端模拟器应用。  
 将此APK文件传输到您的SP3000设备内部存储中，并进行安装。
 
@@ -77,7 +77,7 @@ adb shell am start --user 0 -n com.iriver.tester.factorytool/.UserDebugActivity
 
 #### 2 镜像刷写
 在这一步，我们将通过fastbootd模式，向设备刷入三个镜像文件，分别为 vendor.img 和 vbmeta.img 以及 vbmeta_system.img。  
-***重要***：开始之前，请确保您已经从本指南提供的链接中下载了完整的配套文件（包含官方OTA包解压内容及修改后的文件）。
+***重要***：开始之前，请确保您已经从本指南的Release中下载了完整的配套文件（OTA_Files.zip）。
 
 ##### 1) 刷写定制化的 vendor.img
 我们首先需要刷入一个经过特殊修改的vendor分区镜像。  
