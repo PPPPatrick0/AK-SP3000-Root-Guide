@@ -185,3 +185,11 @@ My translator is currently compiling (or maybe I'm just procrastinating). An Eng
 
 - [ ]  EN translation
 - [ ]  Develop a universal patching method for other devices running UI version 4
+
+
+## Shout-Outs!
+This success wouldn't have been possible without these legends:  
+The APatch Team: Your kernel-patching approach was the skeleton key that bypassed this device's final defenses. Absolute genius!  
+The AKBox dev [@7dollars](https://github.com/7dollars) and community: Thanks for all the encouragement and support. You were the motivation that kept me going!  
+Google Gemini: My AI partner, who provided tireless technical support and brainstorming sessions. AI-assisted reverse engineering is incredibly cool.  
+
