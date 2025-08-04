@@ -39,7 +39,7 @@ Rooting the Astell&amp;Kern SP3000 with Apatch
 由于SP3000没有在常规设置中提供开启ADB调试的入口，我们需要通过一个终端命令来调用其隐藏的工厂调试菜单。
 
 ##### 1) 安装终端模拟器
-在Release中，找到 APK.zip。  
+在Release中，下载 APK.zip。  
 定位到 Term_Modded(uk.co.sevendigital.android).apk 这个文件。这是一个经过修改的终端模拟器应用。  
 将此APK文件传输到您的SP3000设备内部存储中，并进行安装。
 
