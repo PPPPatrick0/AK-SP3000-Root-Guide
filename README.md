@@ -3,7 +3,7 @@
 Rooting the Astell&amp;Kern SP3000 with Apatch
 
 ## [Chinese Version](https://github.com/PPPPatrick0/AK-SP3000-Root-Guide/blob/main/README.md#%E4%B8%AD%E6%96%87%E7%89%88chinese-version)
-## [English Version]()
+## [English Version](https://github.com/PPPPatrick0/AK-SP3000-Root-Guide/blob/main/README.md#english-version-1)
 
 ## 中文版（Chinese Version）
 
