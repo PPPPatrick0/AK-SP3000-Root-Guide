@@ -5,6 +5,8 @@ Rooting the Astell&amp;Kern SP3000 with Apatch
 ## [Chinese Version](https://github.com/PPPPatrick0/AK-SP3000-Root-Guide/edit/main/README.md#%E7%AE%80%E7%9F%AD%E8%AF%B4%E6%98%8E)
 ## [English Version]()
 
+## 中文版（Chinese Version）
+
 ### 简短说明
 
 * 本指南旨在为艾利和 (Astell&Kern) SP3000 播放器提供一套详尽且经过验证的Root方案。本方案基于 SP3000 （无印版）、系统版本 v1.51 。
@@ -27,7 +29,7 @@ Rooting the Astell&amp;Kern SP3000 with Apatch
 ### 操作流程概览
 **本指南将引导您完成以下三个核心步骤：**
 * 准备工作: 在设备上启用开发者选项，并打开USB调试权限。
-* 核心刷写: 使用fastboot工具，将预先准备好的定制化启动镜像 (boot.img)、供应商镜像 (vendor.img) 及 vbmeta.img 刷入您的设备。
+* 核心刷写: 使用fastboot工具，将预先准备好的定制化镜像刷入您的设备。
 * 安装管理器: 安装APatch管理器 (KernelPatch)，用于后续的Root权限管理。
 
 #### 1 准备工作
@@ -73,4 +75,42 @@ adb shell am start --user 0 -n com.iriver.tester.factorytool/.UserDebugActivity
 点击此界面上的第一个选项（与ADB相关的选项）。  
 完成此操作后，ADB调试模式将会被永久激活，即使设备重启也不会关闭。
 
+#### 2 镜像刷写
+在这一步，我们将通过fastbootd模式，向设备刷入三个镜像文件，分别为 vendor.img 和 vbmeta.img 以及 vbmeta_system.img。  
+***重要***：开始之前，请确保您已经从本指南提供的链接中下载了完整的配套文件（包含官方OTA包解压内容及修改后的文件）。
 
+##### 1) 刷写定制化的 vendor.img
+我们首先需要刷入一个经过特殊修改的vendor分区镜像。  
+* 定位文件：
+找到路径为 OTA_files/img/patched/ 的子目录。  
+我们将要使用的是此目录下的 vendor.img 文件。  
+* 关于此文件的说明：
+此vendor.img源自官方OTA升级包，但对其内部的一个关键文件 etc/selinux/precompiled_sepolicy 进行了一些必要（也许）的微调。  
+适用性警告：目前提供的这个vendor.img仅在SP3000标准版（无印版）上测试通过。  
+（免责声明/作者注）：如果怕我往里面投毒的话，我会在以后详细说明我是如何进行修改的（咕咕咕~），也便其他机型（如SP3000T）的用户能自行修改适配其设备的vendor.img。  
+
+* 开始刷写：
+在主机的终端里，输入以下命令让设备重启到fastbootd模式：
+```
+adb reboot fastboot
+```
+注意：请确保设备进入的是 fastbootd 模式（屏幕上会显示fastbootd字样），而不是常规的fastboot（即Bootloader）模式。  
+在主机的终端里，导航到包含vendor.img的目录，然后执行刷写命令：  
+```
+fastboot flash vendor vendor.img
+```
+
+##### 2) 刷写vbmeta镜像以禁用AVB
+成功刷写vendor.img后，我们需要刷写vbmeta和vbmeta_system两个镜像，以彻底关闭安卓验证启动（AVB, Android Verified Boot）。  
+* 定位文件：
+这两个文件 (vbmeta.img 和 vbmeta_system.img) 位于文件的 OTA_files/img/original/ 目录中，它们是未经修改的官方文件。  
+* 执行刷写：
+在fastbootd模式下，执行以下两条命令：  
+```
+# 关闭主验证链
+fastboot --disable-verity flash vbmeta vbmeta.img
+
+# 关闭针对system分区的验证链
+fastboot --disable-verity flash vbmeta_system vbmeta_system.img
+```
+完成以上所有刷写操作后，请不要立即重启设备，继续进行第三步的操作。
