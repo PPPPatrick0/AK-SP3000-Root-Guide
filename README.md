@@ -34,16 +34,16 @@ Rooting the Astell&amp;Kern SP3000 with Apatch
 * 核心刷写: 使用fastboot工具，将预先准备好的定制化镜像刷入您的设备。
 * 安装管理器: 安装APatch管理器 (KernelPatch)，用于后续的Root权限管理。
 
-#### 1 准备工作
+### 1 准备工作
 在设备上启用开发者选项，并打开USB调试权限。  
 由于SP3000没有在常规设置中提供开启ADB调试的入口，我们需要通过一个终端命令来调用其隐藏的工厂调试菜单。
 
-##### 1) 安装终端模拟器
+#### 1) 安装终端模拟器
 在Release中，下载 APK.zip。  
 定位到 Term_Modded(uk.co.sevendigital.android).apk 这个文件。这是一个经过修改的终端模拟器应用。  
 将此APK文件传输到您的SP3000设备内部存储中，并进行安装。
 
-##### 2) 获取完整的读写权限
+#### 2) 获取完整的读写权限
 Astell&Kern的系统存在一个关于文件权限的特殊Bug。为了确保终端应用能正常工作，请遵循以下步骤：  
 · 首次安装后：启动一次刚刚安装的终端应用。如果系统提示请求文件读写权限，请务必“允许”。  
 · 退出应用。  
@@ -53,7 +53,7 @@ Astell&Kern的系统存在一个关于文件权限的特殊Bug。为了确保终
 这样Files_By_Google才能获得正确的文件读写权限，否则进入Files_By_Google会什么都看不到）  
 · 再次启动终端应用。如果系统再次提示请求权限，请同样“允许”。  
 
-##### 3) 开启ADB调试
+#### 3) 开启ADB调试
 在终端模拟器应用中，输入以下命令，然后按回车键：  
 ```
 am start --user 0 -n com.iriver.tester.factorytool/.DebugSettingActivity
@@ -61,7 +61,7 @@ am start --user 0 -n com.iriver.tester.factorytool/.DebugSettingActivity
 执行后，您将直接进入Astell&Kern的工厂调试界面。  
 在此界面中，找到 ADB Debug 选项，并将其开启。  
 
-##### 4) 验证连接
+#### 4) 验证连接
 现在，使用USB数据线将您的SP3000连接到Linux主机。  
 在主机的终端里，输入以下命令：
 ```
@@ -69,7 +69,7 @@ adb devices
 ```
 如果您看到输出了您设备的序列号，并且状态为 device，则表示ADB连接已成功建立。
 
-##### 5) （可选，但强烈推荐）永久开启ADB调试
+#### 5) （可选，但强烈推荐）永久开启ADB调试
 默认情况下，每次重启SP3000后，ADB调试选项都会自动关闭。  
 为了方便后续操作及日后使用，您可以将其设置为永久开启。  
 在主机的终端里，输入以下命令：
@@ -80,11 +80,11 @@ adb shell am start --user 0 -n com.iriver.tester.factorytool/.UserDebugActivity
 点击此界面上的第一个选项（与ADB相关的选项）。  
 完成此操作后，ADB调试模式将会被永久激活，即使设备重启也不会关闭。
 
-#### 2 镜像刷写
+### 2 镜像刷写
 在这一步，我们将通过fastbootd模式，向设备刷入三个镜像文件，分别为 vendor.img 和 vbmeta.img 以及 vbmeta_system.img。  
 ***重要***：开始之前，请确保您已经从本指南的Release中下载了完整的配套文件（OTA_files.zip）。
 
-##### 1) 刷写定制化的 vendor.img
+#### 1) 刷写定制化的 vendor.img
 我们首先需要刷入一个经过特殊修改的vendor分区镜像。  
 * 定位文件：
 找到路径为 OTA_files/img/patched/ 的子目录。  
@@ -105,7 +105,7 @@ adb reboot fastboot
 fastboot flash vendor vendor.img
 ```
 
-##### 2) 刷写vbmeta镜像以禁用AVB
+#### 2) 刷写vbmeta镜像以禁用AVB
 成功刷写vendor.img后，我们需要刷写vbmeta和vbmeta_system两个镜像，以彻底关闭安卓验证启动（AVB, Android Verified Boot）。  
 * 定位文件：
 这两个文件 (vbmeta.img 和 vbmeta_system.img) 位于文件的 OTA_files/img/original/ 目录中，它们是未经修改的官方文件。  
