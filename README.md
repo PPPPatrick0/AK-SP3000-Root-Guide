@@ -177,3 +177,11 @@ fastboot reboot
 
 Oops: 404: English Translation Not Found  
 My translator is currently compiling (or maybe I'm just procrastinating). An English version of this epic saga is on its way. In the meantime, I hope the code snippets and command lines speak for themselves. 
+
+
+
+
+## TO DO LIST
+
+- [ ]  EN translation
+- [ ]  Develop a universal patching method for other devices running UI version 4
