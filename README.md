@@ -169,3 +169,6 @@ fastboot reboot
 
 
 ## English Version
+
+Oops: 404: English Translation Not Found
+My universal translator is currently compiling (or maybe I'm just procrastinating). An English version of this epic saga is on its way. In the meantime, I hope the code snippets and command lines speak for themselves. 
