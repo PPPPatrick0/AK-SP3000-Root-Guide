@@ -9,11 +9,10 @@ Rooting the Astell&amp;Kern SP3000 with Apatch
 通过Apatch来获取SP3000的Root权限
 <img width="1080" height="1920" alt="Screenshot-trinket 1234567 -20250804145857" src="https://github.com/user-attachments/assets/98c6a9e1-ac68-4b4c-ad84-e974af0d0f84" />
 
-
+<del>
 ## [Chinese Version](https://github.com/PPPPatrick0/AK-SP3000-Root-Guide/blob/main/README.md#%E4%B8%AD%E6%96%87%E7%89%88chinese-version)
 ## [English Version](https://github.com/PPPPatrick0/AK-SP3000-Root-Guide/blob/main/README.md#english-version-1)
 
-<del>
 ## 中文版（Chinese Version）
 
 ### 简短说明
