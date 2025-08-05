@@ -38,7 +38,7 @@ Rooting the Astell&amp;Kern SP3000 with Apatch
 **本指南将引导您完成以下三个核心步骤：**
 * 准备工作: 在设备上启用开发者选项，并打开USB调试权限。
 * 核心刷写: 使用fastboot工具，将预先准备好的定制化镜像刷入您的设备。
-* 安装管理器: 安装APatch管理器 (KernelPatch)，用于后续的Root权限管理。
+* 安装Root及管理器: 刷写Apatch patch后的镜像，并安装APatch管理器。
 
 ### 1 准备工作
 在设备上启用开发者选项，并打开USB调试权限。  
