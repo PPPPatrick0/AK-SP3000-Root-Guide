@@ -1,6 +1,8 @@
 # AK-SP3000-Root-Guide
 # 艾利和SP3000的Root指北
 
+
+
 Rooting the Astell&amp;Kern SP3000 with Apatch  
 通过Apatch来获取SP3000的Root权限
 <img width="1080" height="1920" alt="Screenshot-trinket 1234567 -20250804145857" src="https://github.com/user-attachments/assets/98c6a9e1-ac68-4b4c-ad84-e974af0d0f84" />
@@ -184,7 +186,8 @@ My translator is currently compiling (or maybe I'm just procrastinating). An Eng
 ## TO DO LIST
 
 - [ ]  EN translation
-- [ ]  Develop a universal patching method for other devices running UI version 4
+- [ ]  Crack APK whitelist
+- [x]  Develop a universal patching method for other devices running UI version 4
 
 
 ## Shout-Outs!
