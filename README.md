@@ -12,6 +12,7 @@ Rooting the Astell&amp;Kern SP3000 with Apatch
 ## [Chinese Version](https://github.com/PPPPatrick0/AK-SP3000-Root-Guide/blob/main/README.md#%E4%B8%AD%E6%96%87%E7%89%88chinese-version)
 ## [English Version](https://github.com/PPPPatrick0/AK-SP3000-Root-Guide/blob/main/README.md#english-version-1)
 
+<del>
 ## 中文版（Chinese Version）
 
 ### 简短说明
@@ -189,7 +190,7 @@ My translator is currently compiling (or maybe I'm just procrastinating). An Eng
 - [ ]  EN translation
 - [ ]  Crack APK whitelist
 - [x]  Develop a universal patching method for other devices running UI version 4
-
+</del>
 
 ## Shout-Outs!
 This success wouldn't have been possible without these legends:  
