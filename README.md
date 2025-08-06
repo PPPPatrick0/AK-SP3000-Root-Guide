@@ -1,7 +1,7 @@
 # AK-SP3000-Root-Guide
 # 艾利和SP3000的Root指北
 
-## [Check out the new project! ]()
+## [Check out the new project! ](https://github.com/PPPPatrick0/AstellKern-DAP-Root-Guide)
 It's now universal: Root access is achievable for all devices running UI version 4 (in theory).  
 查看新的项目，现在他是通用的了，所有UI4的机型都可以获取到root权限（理论上）。
 
